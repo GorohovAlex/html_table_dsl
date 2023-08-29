@@ -1,3 +1,8 @@
+PATH
+  remote: .
+  specs:
+    html_table_dsl (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -75,12 +80,13 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
-  bundler
-  fasterer
-  pry
-  rspec
-  rubocop-rspec
-  simplecov
+  bundler (~> 2.0)
+  fasterer (~> 0.10.1)
+  html_table_dsl!
+  pry (~> 0.14.2)
+  rspec (~> 3.12)
+  rubocop-rspec (~> 2.23.2)
+  simplecov (~> 0.22.0)
 
 BUNDLED WITH
    2.3.14

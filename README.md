@@ -1,6 +1,14 @@
 # HTML-table DSL
 DLS for working with HTML tables. Easy creation and population of tables in Ruby.
 
+## Install gem
+```
+gem install html_table_dsl
+```
+## Use gem
+```
+require 'html/table'
+```
 ## Create table
 ```ruby
 html_table = Html.table(1, 2, name: 'table_name', class: 'table_class')
