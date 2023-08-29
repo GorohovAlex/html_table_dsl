@@ -1,0 +1,16 @@
+require: rubocop-rspec
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Max: 35
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+RSpec/MultipleExpectations:
+  Enabled: false
