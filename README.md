@@ -22,8 +22,8 @@ html_table.attributes = { class: 'table_class_new', name: nil, style: 'border: 1
 ## Set headers
 ```ruby
 head_cols = [Html::HeadCol.new('Text')]
-head_row = Html::Row.new(head_cols, name: 'row_name', class: 'row_class')
-html_table.write_header(head_row)
+head_rows = [Html::Row.new(head_cols, name: 'row_name', class: 'row_class')]
+html_table.write_header(head_rows)
 # <table><thead><tr name='row_name' class='row_class'><th>Text</th></tr></thead><tbody> ... </tbody></table>
 ```
 ## Set rows

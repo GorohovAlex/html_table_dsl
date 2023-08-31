@@ -27,4 +27,12 @@ describe Html::Tbody do
       expect(col.to_s).to eq("<tbody color='red' background-color='gray'></tbody>")
     end
   end
+
+  context 'when rows is invalid' do
+    let(:rows) { [1] }
+    let(:allowed_classes) { 'Html::Row' }
+    let(:expected_message) { "The child must be an Html class on of: #{allowed_classes}" }
+
+    it { expect { col.to_s }.to raise_error(ChildFormatError, expected_message) }
+  end
 end

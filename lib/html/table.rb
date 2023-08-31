@@ -10,10 +10,10 @@ module Html
 
   class Table < Tag
     def initialize(rows = 0, cols = 0, **attrs)
-      super(**attrs)
+      @head_rows = []
+      @body_rows = Array.new(rows, Row.new(Array.new(cols, Col.new(' '))))
 
-      @head_rows = Row.new(Array.new(0))
-      @body_rows = Array.new(rows, Row.new(Array.new(cols, Col.new)))
+      super(**attrs)
     end
 
     def write_row(index, row)
@@ -24,16 +24,16 @@ module Html
       @head_rows = head_rows
     end
 
-    private
-
-    def tag_name
-      :table
-    end
-
     def value
       output_value = ''
       output_value += head.to_s unless head.empty?
       output_value + body.to_s unless body.empty?
+    end
+
+    private
+
+    def tag_name
+      :table
     end
 
     def head

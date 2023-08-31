@@ -24,4 +24,12 @@ describe Html::Row do
       expect(col.to_s).to eq("<tr color='red' background-color='gray'></tr>")
     end
   end
+
+  context 'when cols is invalid' do
+    let(:cols) { [1] }
+    let(:allowed_classes) { 'Html::Col, Html::HeadCol' }
+    let(:expected_message) { "The child must be an Html class on of: #{allowed_classes}" }
+
+    it { expect { col.to_s }.to raise_error(ChildFormatError, expected_message) }
+  end
 end
